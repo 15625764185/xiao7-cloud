@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    #mysql8版本以上的驱动包，需要指定以下时区
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    #mysql8版本以上指定新的驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #引入Druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource

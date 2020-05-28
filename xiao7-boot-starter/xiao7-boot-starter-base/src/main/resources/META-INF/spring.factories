@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.xiao7.cloud.boot.base.listener.StartEventListener
+org.springframework.context.ApplicationListener=\
+  com.xiao7.cloud.boot.base.listener.Xiao7ApplicationListener

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.xiao7.cloud.boot.mybatis.config.MybatisPlusConfig,\
+  com.xiao7.cloud.boot.mybatis.handlers.AutoFillMetaObjectHandler

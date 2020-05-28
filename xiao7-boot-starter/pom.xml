@@ -10,8 +10,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>xiao7-boot-starter</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>xiao7-boot-starter-mybatis</module>
+        <module>xiao7-boot-starter-base</module>
+        <module>xiao7-boot-starter-dependencies</module>
+    </modules>
 
     <properties>
+        <mysql-connection.version>8.0.16</mysql-connection.version>
+        <xiao7-boot.version>1.0-SNAPSHOT</xiao7-boot.version>
+        <tx.version>5.1.4.RELEASE</tx.version>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <lombok.version>1.18.0</lombok.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
+        <hibernate-validator.version>6.1.2.Final</hibernate-validator.version>
+        <mybatis-plus-boot-starter.version>3.3.1</mybatis-plus-boot-starter.version>
         <cn.hutool.version>5.2.4</cn.hutool.version>
         <fst.version>2.57</fst.version>
         <fastjson.version>1.2.56</fastjson.version>
@@ -39,12 +54,56 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--引入spring-boot相关依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <!-- 事务 tx 依赖-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${tx.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!--引入spring-boot相关依赖 -->
             <!--引入jdbc相关依赖 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connection.version}</version>
+            </dependency>
+            <!--引入jdbc相关依赖 -->
+            <!--引入hibernate相关依赖 -->
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation-api.version}</version>
+            </dependency>
+            <!--引入hibernate相关依赖 -->
+            <!--引入lombok相关依赖 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--引入lombok相关依赖 -->
         </dependencies>
     </dependencyManagement>
 </project>
