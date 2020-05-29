@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.core.incrementer.IKeyGenerator;
 import com.baomidou.mybatisplus.extension.incrementer.H2KeyGenerator;
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.xiao7.cloud.boot.mybatis.plugins.sqllog.SqlLogInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +34,13 @@ public class MybatisPlusConfig {
   @Bean
   public OptimisticLockerInterceptor OptimisticLockerInterceptor() {
     return new OptimisticLockerInterceptor();
+  }
+
+  /** sql 日志 */
+  @Bean
+  @ConditionalOnProperty(value = "xiao7.mybaits.enable-sql-log", matchIfMissing = true)
+  public SqlLogInterceptor sqlLogInterceptor() {
+    return new SqlLogInterceptor();
   }
 
   /** 分页插件 */

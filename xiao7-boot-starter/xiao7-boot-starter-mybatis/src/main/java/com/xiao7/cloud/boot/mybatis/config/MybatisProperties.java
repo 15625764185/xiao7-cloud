@@ -15,6 +15,9 @@ import java.io.Serializable;
 public class MybatisProperties implements Serializable {
   public static final String PREFIX = "xiao7.mybatis";
 
+  /** 数据版本 */
+  private String version = "1";
+
   /** 使用mybaits starter */
   private boolean enable = true;
 

@@ -11,3 +11,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     #引入Druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
+xiao7:
+  mybaits:
+    enable-sql-log: true

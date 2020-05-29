@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xiao7-boot-starter-mybatis" />
+        <module name="xiao7-boot-starter-generator" />
         <module name="xiao7-boot-starter-base" />
         <module name="xiao7-boot-starter-dependencies" />
         <module name="example" />
@@ -19,6 +20,7 @@
       <module name="example" options="-parameters" />
       <module name="xiao7-boot-starter-base" options="-parameters" />
       <module name="xiao7-boot-starter-dependencies" options="-parameters" />
+      <module name="xiao7-boot-starter-generator" options="-parameters" />
       <module name="xiao7-boot-starter-mybatis" options="-parameters" />
     </option>
   </component>
