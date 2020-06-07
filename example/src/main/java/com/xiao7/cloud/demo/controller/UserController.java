@@ -1,5 +1,6 @@
 package com.xiao7.cloud.demo.controller;
 
+import com.xiao7.cloud.demo.entity.user.EsResultMapper;
 import com.xiao7.cloud.demo.entity.user.User;
 import com.xiao7.cloud.demo.service.user.ElasticRepository;
 import com.xiao7.cloud.demo.service.user.IUserRepository;
@@ -8,6 +9,7 @@ import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,18 +30,25 @@ public class UserController {
   @Autowired
   private ElasticRepository elasticRepository;
 
+  @Autowired
+  private ElasticsearchRestTemplate elasticsearchTemplate;
+
+  @Autowired
+  private EsResultMapper esResultMapper;
 
   @GetMapping("detailByEs/{id}")
   public Page<User> detailByEs(@PathVariable("id") String id) {
     NativeSearchQueryBuilder searchQueryBuilder = new NativeSearchQueryBuilder();
+    HighlightBuilder highlightBuilder = new HighlightBuilder();
+    highlightBuilder.field(new HighlightBuilder.Field("content"));
     searchQueryBuilder
             .withPageable(Pageable.unpaged())
-            .withQuery(QueryBuilders.matchPhraseQuery("content", id))
-            .withHighlightFields(
-                    new HighlightBuilder.Field("content")
-                            .preTags("<em>")
-                            .postTags("</em>"));
-    return elasticRepository.search(searchQueryBuilder.build());
+            .withQuery(QueryBuilders.boolQuery().must(QueryBuilders.matchQuery("content", id)))
+            .withFilter(QueryBuilders.rangeQuery("age").gt(11))
+            .withHighlightBuilder(new HighlightBuilder().field("content"));
+
+    return elasticsearchTemplate.queryForPage(searchQueryBuilder.build(), User.class, esResultMapper);
+    // return elasticRepository.search(searchQueryBuilder.build());
 //    return elasticRepository.findByContent(id, Pageable.unpaged());
   }
 
