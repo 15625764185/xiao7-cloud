@@ -66,7 +66,8 @@ public class EsResultMapper implements SearchResultMapper {
 
     @Override
     public <T> T mapSearchHit(SearchHit searchHit, Class<T> type) {
-        return null;
+        Map<String, Object> map = searchHit.getSourceAsMap();
+        return JSON.parseObject(JSONObject.toJSONString(map), type);
     }
 
 }
