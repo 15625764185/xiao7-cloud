@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.xiao7.cloud.boot.jdbc.config.DataSourceConfig,\
+    com.xiao7.cloud.boot.jdbc.aspect.DataSourceAspect

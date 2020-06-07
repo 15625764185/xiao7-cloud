@@ -17,6 +17,7 @@
         <module>xiao7-boot-starter-base</module>
         <module>xiao7-boot-starter-dependencies</module>
         <module>xiao7-boot-starter-generator</module>
+        <module>xiao7-boot-starter-jdbc</module>
     </modules>
 
     <properties>

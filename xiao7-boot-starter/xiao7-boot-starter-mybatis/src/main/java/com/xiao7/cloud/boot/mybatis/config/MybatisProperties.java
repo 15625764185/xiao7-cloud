@@ -18,7 +18,7 @@ public class MybatisProperties implements Serializable {
   /** 数据版本 */
   private String version = "1";
 
-  /** 使用mybaits starter */
+  /** mybatis starter */
   private boolean enable = true;
 
   /** 启动自动填充功能：更新/修改 会自动填充创建时间，修改时间 */

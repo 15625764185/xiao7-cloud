@@ -2,6 +2,7 @@ package com.xiao7.cloud.boot.mybatis.base;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ public abstract class BaseModel implements Serializable {
 
   /** 主键ID */
   @TableId(value = "id", type = IdType.ASSIGN_ID)
+  @Id
   private String id;
 
   /** 创建时间 */
