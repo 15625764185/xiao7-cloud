@@ -16,6 +16,6 @@ public interface TableColConstant {
   /** 数据库版本 */
   String DB_VERSION = "version";
 
-  /** 数据库版本 */
+  /** 是否删除 */
   String IS_DELETE = "isDelete";
 }

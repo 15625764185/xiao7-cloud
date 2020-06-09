@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.lang.annotation.*;
 
 /**
- * Bifrost启动注解
+ * 启动注解
  *
  * @desc 所有工程必须添加该注解，通过注解加载自定义的初始化参数
  * @author cwh

@@ -4,14 +4,14 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.xiao7.cloud.demo.entity.user.User">
-    <result column="id" property="id" />
-    <result column="update_time" property="updateTime" />
-    <result column="create_time" property="createTime" />
-    <result column="version" property="version" />
-    <result column="is_delete" property="isDelete" />
-        <result column="user_name" property="userName" />
-        <result column="password" property="password" />
-        <result column="age" property="age" />
+        <result column="id" property="id"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="version" property="version"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="age" property="age"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->

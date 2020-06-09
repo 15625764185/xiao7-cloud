@@ -54,14 +54,7 @@ public class SqlLogInterceptor implements Interceptor {
     } catch (Exception e) {
       // do nothing
     }
-    if (stmtMetaObj.hasGetter("delegate")) {
-      // Hikari
-      try {
-        statement = (Statement) stmtMetaObj.getValue("delegate");
-      } catch (Exception ignored) {
 
-      }
-    }
     String originalSql = null;
     String stmtClassName = statement.getClass().getName();
     if (DRUID_POOLED_PREPARED_STATEMENT.equals(stmtClassName)) {

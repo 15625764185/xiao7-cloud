@@ -29,4 +29,10 @@ spring:
       uris: http://localhost:9200
       username:
       password:
+  redis:
+    database: 0
+    sentinel:
+      master: redisgroup
+      nodes: 101.37.30.142:7001,101.37.30.142:7002,101.37.30.142:7003
+    password: 123456
 
