@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+   com.xiao7.cloud.boot.redis.config.RedisProperties,\
+   com.xiao7.cloud.boot.redis.config.RedisConfig
+

@@ -29,6 +29,16 @@
             <artifactId>xiao7-boot-starter-jdbc</artifactId>
             <version>${xiao7-boot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.xiao7</groupId>
+            <artifactId>xiao7-boot-starter-web</artifactId>
+            <version>${xiao7-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiao7</groupId>
+            <artifactId>xiao7-boot-starter-redis</artifactId>
+            <version>${xiao7-boot.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

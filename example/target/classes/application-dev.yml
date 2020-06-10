@@ -2,6 +2,8 @@ server:
   port: 8080
 
 xiao7:
+  redis:
+    enable: true
   datasource:
     username: root
     password: 123456
@@ -26,9 +28,9 @@ xiao7:
 spring:
   elasticsearch:
     rest:
-      uris: http://localhost:9200
-      username:
-      password:
+      uris: http://101.37.30.142:9200
+      username: elastic
+      password: 123456
   redis:
     database: 0
     sentinel:

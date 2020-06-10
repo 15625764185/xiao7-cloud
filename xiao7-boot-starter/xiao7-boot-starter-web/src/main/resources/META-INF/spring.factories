@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+ com.xiao7.cloud.boot.web.interceptor.AutoTrimConfiguration,\
+ com.xiao7.cloud.boot.web.aspect.RequestLogAspect
+
