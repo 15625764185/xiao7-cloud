@@ -28,9 +28,10 @@ xiao7:
 spring:
   elasticsearch:
     rest:
-      uris: http://101.37.30.142:9200
-      username: elastic
-      password: 123456
+      uris: http://127.0.0.1:9200
+  #      uris: http://101.37.30.142:9200
+  #      username: elastic
+  #      password: 123456
   redis:
     database: 0
     sentinel:

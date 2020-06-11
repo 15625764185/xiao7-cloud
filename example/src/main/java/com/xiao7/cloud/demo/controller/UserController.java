@@ -26,63 +26,68 @@ import java.util.Arrays;
 @RequestMapping("/user")
 public class UserController {
 
-  @Autowired private IUserRepository userRepository;
-  @Autowired private ElasticRepository elasticRepository;
+    @Autowired
+    private IUserRepository userRepository;
+    @Autowired
+    private ElasticRepository elasticRepository;
 
-  @Autowired private ElasticsearchRestTemplate elasticsearchTemplate;
+    @Autowired
+    private ElasticsearchRestTemplate elasticsearchTemplate;
 
-  @Autowired private EsResultMapper esResultMapper;
+    @Autowired
+    private EsResultMapper esResultMapper;
 
-  @Autowired private RedisTemplate redisTemplate;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
-  @GetMapping("detailByEs/{id}")
-  public Page<User> detailByEs(@PathVariable("id") String id) {
-    NativeSearchQueryBuilder searchQueryBuilder = new NativeSearchQueryBuilder();
-    HighlightBuilder highlightBuilder = new HighlightBuilder();
-    highlightBuilder.field(new HighlightBuilder.Field("content"));
-    searchQueryBuilder
-        .withPageable(Pageable.unpaged())
-        .withQuery(QueryBuilders.boolQuery().must(QueryBuilders.matchQuery("content", id)))
-        .withFilter(QueryBuilders.rangeQuery("age").gt(11))
-        .withHighlightBuilder(new HighlightBuilder().field("content"));
+    @GetMapping("detailByEs/{id}")
+    public Page<User> detailByEs(@PathVariable("id") String id) {
+        NativeSearchQueryBuilder searchQueryBuilder = new NativeSearchQueryBuilder();
+        HighlightBuilder highlightBuilder = new HighlightBuilder();
+        highlightBuilder.field(new HighlightBuilder.Field("content"));
+        searchQueryBuilder.withPageable(Pageable.unpaged())
+                .withQuery(QueryBuilders.boolQuery().must(QueryBuilders.matchQuery("attachment.content", id)))
+                .withFilter(QueryBuilders.rangeQuery("age").gt(11))
+                .withHighlightBuilder(new HighlightBuilder().field("attachment.content"));
 
-    return elasticsearchTemplate.queryForPage(
-        searchQueryBuilder.build(), User.class, esResultMapper);
-    // return elasticRepository.search(searchQueryBuilder.build());
-    //    return elasticRepository.findByContent(id, Pageable.unpaged());
-  }
 
-  @GetMapping("detail/{id}")
-  public User detail(@PathVariable("id") String id) {
-    return userRepository.getByIdInBill(id);
-  }
+        return elasticsearchTemplate.queryForPage(
+                searchQueryBuilder.build(), User.class, esResultMapper);
+        // return elasticRepository.search(searchQueryBuilder.build());
+        //    return elasticRepository.findByContent(id, Pageable.unpaged());
+    }
 
-  @PostMapping("submit")
-  public boolean save(@RequestBody User user) {
-    userRepository.save(user);
-    elasticRepository.save(user);
-    return true;
-  }
+    @GetMapping("detail/{id}")
+    public User detail(@PathVariable("id") String id) {
+        return userRepository.getByIdInBill(id);
+    }
 
-  @PutMapping("update")
-  public boolean update(@RequestBody User user) {
-    elasticRepository.save(user);
-    return userRepository.updateById(user);
-  }
+    @PostMapping("submit")
+    public boolean save(@RequestBody User user) {
+        userRepository.save(user);
+        elasticRepository.save(user);
+        return true;
+    }
 
-  @DeleteMapping("delete")
-  public boolean delete(String ids) {
-    return userRepository.removeByIds(Arrays.asList(ids.split(",")));
-  }
+    @PutMapping("update")
+    public boolean update(@RequestBody User user) {
+        elasticRepository.save(user);
+        return userRepository.updateById(user);
+    }
 
-  @DeleteMapping("delete/{id}")
-  public boolean deleteById(@PathVariable("id") String id) {
-    return userRepository.deleteByIdInBill(id);
-  }
+    @DeleteMapping("delete")
+    public boolean delete(String ids) {
+        return userRepository.removeByIds(Arrays.asList(ids.split(",")));
+    }
 
-  @GetMapping("testRedis/{id}")
-  public boolean testRedis(@PathVariable("id") String id) {
-    redisTemplate.opsForValue().set("test", id);
-    return true;
-  }
+    @DeleteMapping("delete/{id}")
+    public boolean deleteById(@PathVariable("id") String id) {
+        return userRepository.deleteByIdInBill(id);
+    }
+
+    @GetMapping("testRedis/{id}")
+    public boolean testRedis(@PathVariable("id") String id) {
+        redisTemplate.opsForValue().set("test", id);
+        return true;
+    }
 }

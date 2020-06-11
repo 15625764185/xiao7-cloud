@@ -25,7 +25,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Document(indexName = "example", type = "user", shards = 1, replicas = 0)
 public class User extends BaseModel {
 
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * 用户名
@@ -52,7 +52,12 @@ public class User extends BaseModel {
      * 描述
      */
     @TableField("content")
-    @Field(type = FieldType.Text, analyzer = "ik_max_word")
+    @Field(type = FieldType.Text)
     private String content;
 
+
+    @Field(type = FieldType.Text)
+    private String fileData;
+
+    private Attachment attachment;
 }
