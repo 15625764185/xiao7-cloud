@@ -44,8 +44,8 @@ public class EsResultMapper implements SearchResultMapper {
             for (Map.Entry<String, HighlightField> highlightField : highlightFields.entrySet()) {
                 // 获取高亮的Key
                 String key = highlightField.getKey();
-                String[] keys = key.split(".");
-
+                String[] keys = key.split("\\.");
+                key = keys[keys.length - 1];
                 // 获取高亮的Value
                 HighlightField value = highlightField.getValue();
                 // 实际fragments[0]就是高亮的结果，无需遍历拼接
@@ -56,7 +56,7 @@ public class EsResultMapper implements SearchResultMapper {
                 }
                 // 因为高亮的字段必然存在于Map中，就是key值
                 // 可能有一种情况，就是高亮的字段是嵌套Map，也就是说在Map里面还有Map的这种情况，这里没有考虑
-                map.put("content", sb.toString().replaceAll("\n|\t", ""));
+                map.put(key, sb.toString().replaceAll("\n|\t", ""));
             }
             // 把Map转换成对象
             map.put("attachment", "");
