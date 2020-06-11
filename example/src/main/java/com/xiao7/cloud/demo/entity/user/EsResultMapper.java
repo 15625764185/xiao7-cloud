@@ -56,7 +56,7 @@ public class EsResultMapper implements SearchResultMapper {
                 }
                 // 因为高亮的字段必然存在于Map中，就是key值
                 // 可能有一种情况，就是高亮的字段是嵌套Map，也就是说在Map里面还有Map的这种情况，这里没有考虑
-                map.put(key, sb.toString().replaceAll("\n|\t", ""));
+                map.put(key, sb.toString().replaceAll("[\n\t]", ""));
             }
             // 把Map转换成对象
             map.put("attachment", "");

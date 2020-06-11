@@ -45,7 +45,7 @@ public class ApplicationTest {
         // user.setFileData("QmFzZTY057yW56CB6K+05piOCuOAgOOAgEJhc2U2NOe8lueggeimgeaxguaKijPkuKo45L2N5a2X6IqC77yIMyo4PTI077yJ6L2s5YyW5Li6NOS4qjbkvY3nmoTlrZfoioLvvIg0KjY9MjTvvInvvIzkuYvlkI7lnKg25L2N55qE5YmN6Z2i6KGl5Lik5LiqMO+8jOW9ouaIkDjkvY3kuIDkuKrlrZfoioLnmoTlvaLlvI/jgIIg5aaC5p6c5Ymp5LiL55qE5a2X56ym5LiN6LazM+S4quWtl+iKgu+8jOWImeeUqDDloavlhYXvvIzovpPlh7rlrZfnrKbkvb/nlKgnPSfvvIzlm6DmraTnvJbnoIHlkI7ovpPlh7rnmoTmlofmnKzmnKvlsL7lj6/og73kvJrlh7rnjrAx5oiWMuS4qic9J+OAggoK44CA44CA5Li65LqG5L+d6K+B5omA6L6T5Ye655qE57yW56CB5L2N5Y+v6K+75a2X56ym77yMQmFzZTY05Yi25a6a5LqG5LiA5Liq57yW56CB6KGo77yM5Lul5L6/6L+b6KGM57uf5LiA6L2s5o2i44CC57yW56CB6KGo55qE5aSn5bCP5Li6Ml42PTY077yM6L+Z5Lmf5pivQmFzZTY05ZCN56ew55qE55Sx5p2l44CC");
 
         try {
-            File file = new File("C:\\Users\\Administrator\\Desktop\\201641413135-陈文浩-基于JavaEE的文化交流社区.docx");
+            File file = new File("C:\\Users\\Administrator\\Desktop\\答辩分组名单---(1)(1)(1).xlsx");
             //            String str = StrUtil.str(Base64Encoder.encode(FileUtil.readBytes(file), false,
             // false), "UTF-8");
             user.setFileData(Base64.encode(file));
