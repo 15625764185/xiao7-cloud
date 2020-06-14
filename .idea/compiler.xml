@@ -9,10 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="xiao7-boot-starter-generator" />
         <module name="xiao7-boot-starter-redis" />
+        <module name="springboot-example" />
         <module name="xiao7-boot-starter-base" />
+        <module name="xiao7-boot-starter-rocketMQ" />
         <module name="xiao7-boot-starter-mybatis" />
         <module name="xiao7-boot-starter-jdbc" />
-        <module name="example" />
+        <module name="rocketMq-example" />
         <module name="xiao7-boot-starter-dependencies" />
         <module name="xiao7-boot-starter-web" />
       </profile>
@@ -20,13 +22,15 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="example" options="-parameters" />
+      <module name="rocketMq-example" options="-parameters" />
+      <module name="springboot-example" options="-parameters" />
       <module name="xiao7-boot-starter-base" options="-parameters" />
       <module name="xiao7-boot-starter-dependencies" options="-parameters" />
       <module name="xiao7-boot-starter-generator" options="-parameters" />
       <module name="xiao7-boot-starter-jdbc" options="-parameters" />
       <module name="xiao7-boot-starter-mybatis" options="-parameters" />
       <module name="xiao7-boot-starter-redis" options="-parameters" />
+      <module name="xiao7-boot-starter-rocketMQ" options="-parameters" />
       <module name="xiao7-boot-starter-web" options="-parameters" />
     </option>
   </component>

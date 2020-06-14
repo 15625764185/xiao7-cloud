@@ -47,7 +47,7 @@ public class Xiao7ApplicationListener
       return;
     }
     String appName = Func.toStr(getAnnotationValue(annotation, Xiao7Application.APP_NAME), null);
-    String port = Func.toStr(getAnnotationValue(annotation, Xiao7Application.PORR), null);
+    String port = Func.toStr(getAnnotationValue(annotation, Xiao7Application.PORT), null);
     String env = Func.toStr(getAnnotationValue(annotation, Xiao7Application.ENV), null);
     // jar 启动传参数, 使用传入参数
     if (BeanUtil.isNotEmpty(System.getProperty(ACTIVE_PROFILES_PROPERTY))) {

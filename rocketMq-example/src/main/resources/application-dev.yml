@@ -1,0 +1,4 @@
+xiao7:
+  rocketmq:
+    nameServerAddress: 127.0.0.1:9876
+    producerGroup: xiao7-mq-producer-group

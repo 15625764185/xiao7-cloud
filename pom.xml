@@ -14,8 +14,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>example</module>
+        <module>springboot-example</module>
         <module>xiao7-boot-starter</module>
+        <module>rocketMq-example</module>
     </modules>
 
 

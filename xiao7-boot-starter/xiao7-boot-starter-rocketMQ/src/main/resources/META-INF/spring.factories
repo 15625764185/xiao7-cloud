@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.xiao7.cloud.boot.rocketMQ.config.MqBaseAutoConfiguration,\
+    com.xiao7.cloud.boot.rocketMQ.config.MqConsumerAutoConfiguration,\
+    com.xiao7.cloud.boot.rocketMQ.config.MqProducerAutoConfiguration
+

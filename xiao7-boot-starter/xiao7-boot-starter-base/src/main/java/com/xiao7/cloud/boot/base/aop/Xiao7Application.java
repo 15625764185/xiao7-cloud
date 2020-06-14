@@ -35,7 +35,7 @@ import java.lang.annotation.*;
 public @interface Xiao7Application {
 
   String APP_NAME = "appName";
-  String PORR = "port";
+  String PORT = "port";
   String ENV = "env";
 
   /**
