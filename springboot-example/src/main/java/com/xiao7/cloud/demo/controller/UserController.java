@@ -28,6 +28,7 @@ public class UserController {
 
     @Autowired
     private IUserRepository userRepository;
+
     @Autowired
     private ElasticRepository elasticRepository;
 

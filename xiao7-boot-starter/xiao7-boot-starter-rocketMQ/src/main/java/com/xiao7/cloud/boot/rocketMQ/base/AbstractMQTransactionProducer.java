@@ -8,7 +8,6 @@ import org.apache.rocketmq.client.producer.SendStatus;
 import org.apache.rocketmq.client.producer.TransactionListener;
 import org.apache.rocketmq.client.producer.TransactionMQProducer;
 import org.apache.rocketmq.common.message.Message;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * RocketMQ的事务生产者的抽象基类
@@ -17,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Data
 public abstract class AbstractMQTransactionProducer implements TransactionListener {
 
-    @Autowired
     private TransactionMQProducer transactionProducer;
-
 
     public SendResult sendMessageInTransaction(Message msg, Object arg) throws RocketException {
         try {

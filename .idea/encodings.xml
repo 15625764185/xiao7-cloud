@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/adapter" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/bridge" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/builder" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/command" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/composite" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/decorator" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/facade" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/factory" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/flyweight" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/interpreter" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/iterator" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/mediator" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/memento" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/money" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/observer" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/principle" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/prototype" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/proxy" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/responsibilitychain" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/singleton" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/state" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/strategy" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/template" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/uml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java-learning-modules/DesignPatterns/src/main/java/com.xiao7/visitor" charset="GBK" />
     <file url="file://$PROJECT_DIR$/rocketMq-example/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-example/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-example/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-example/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiao7-boot-starter/xiao7-boot-starter-base/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiao7-boot-starter/xiao7-boot-starter-base/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xiao7-boot-starter/xiao7-boot-starter-generator/src/main/java" charset="UTF-8" />

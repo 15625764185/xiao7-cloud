@@ -13,25 +13,29 @@
         <module name="xiao7-boot-starter-base" />
         <module name="xiao7-boot-starter-rocketMQ" />
         <module name="xiao7-boot-starter-mybatis" />
+        <module name="springcloud-example" />
         <module name="xiao7-boot-starter-jdbc" />
+        <module name="xiao7-boot-starter-cloud" />
         <module name="rocketMq-example" />
         <module name="xiao7-boot-starter-dependencies" />
+        <module name="DesignPatterns" />
         <module name="xiao7-boot-starter-web" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="rocketMq-example" options="-parameters" />
-      <module name="springboot-example" options="-parameters" />
-      <module name="xiao7-boot-starter-base" options="-parameters" />
-      <module name="xiao7-boot-starter-dependencies" options="-parameters" />
-      <module name="xiao7-boot-starter-generator" options="-parameters" />
-      <module name="xiao7-boot-starter-jdbc" options="-parameters" />
-      <module name="xiao7-boot-starter-mybatis" options="-parameters" />
-      <module name="xiao7-boot-starter-redis" options="-parameters" />
-      <module name="xiao7-boot-starter-rocketMQ" options="-parameters" />
-      <module name="xiao7-boot-starter-web" options="-parameters" />
+      <module name="rocketMq-example" options="" />
+      <module name="springboot-example" options="" />
+      <module name="springcloud-example" options="" />
+      <module name="xiao7-boot-starter-base" options="" />
+      <module name="xiao7-boot-starter-dependencies" options="" />
+      <module name="xiao7-boot-starter-generator" options="" />
+      <module name="xiao7-boot-starter-jdbc" options="" />
+      <module name="xiao7-boot-starter-mybatis" options="" />
+      <module name="xiao7-boot-starter-redis" options="" />
+      <module name="xiao7-boot-starter-rocketMQ" options="" />
+      <module name="xiao7-boot-starter-web" options="" />
     </option>
   </component>
 </project>

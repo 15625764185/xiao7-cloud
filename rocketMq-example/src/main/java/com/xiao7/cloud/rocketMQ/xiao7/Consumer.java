@@ -18,6 +18,8 @@ public class Consumer extends AbstractMQPushConsumer<String> {
     @Override
     public boolean process(String message, Map<String, Object> extMap) {
         System.out.println("id:" + extMap.get(MessageConstant.PROPERTY_EXT_MSG_ID) + "====标签:" + extMap.get(MessageConstant.PROPERTY_TAGS) + "消费了:" + message);
+
         return true;
     }
+
 }

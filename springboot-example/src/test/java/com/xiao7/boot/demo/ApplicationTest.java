@@ -10,18 +10,25 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.junit.jupiter.api.Test;
+import org.springframework.aop.MethodBeforeAdvice;
+import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.File;
+import java.lang.reflect.Method;
+
+import static org.springframework.test.util.AssertionErrors.assertTrue;
 
 /**
  * @author ：xiao7
  * @date ：Created in 2020/5/29 22:44
  * @description：测试
  */
+
+
 @SpringBootTest(classes = SpringbootDemoApplication.class)
 public class ApplicationTest {
 
@@ -34,6 +41,7 @@ public class ApplicationTest {
     @Autowired
     private RedisTemplate redisTemplate;
 
+
     @Test
     public void testES() {
         User user = new User();
@@ -41,11 +49,12 @@ public class ApplicationTest {
         user.setContent("asd");
         user.setUserName("asd");
         user.setId("12412412");
+
         //
         // user.setFileData("QmFzZTY057yW56CB6K+05piOCuOAgOOAgEJhc2U2NOe8lueggeimgeaxguaKijPkuKo45L2N5a2X6IqC77yIMyo4PTI077yJ6L2s5YyW5Li6NOS4qjbkvY3nmoTlrZfoioLvvIg0KjY9MjTvvInvvIzkuYvlkI7lnKg25L2N55qE5YmN6Z2i6KGl5Lik5LiqMO+8jOW9ouaIkDjkvY3kuIDkuKrlrZfoioLnmoTlvaLlvI/jgIIg5aaC5p6c5Ymp5LiL55qE5a2X56ym5LiN6LazM+S4quWtl+iKgu+8jOWImeeUqDDloavlhYXvvIzovpPlh7rlrZfnrKbkvb/nlKgnPSfvvIzlm6DmraTnvJbnoIHlkI7ovpPlh7rnmoTmlofmnKzmnKvlsL7lj6/og73kvJrlh7rnjrAx5oiWMuS4qic9J+OAggoK44CA44CA5Li65LqG5L+d6K+B5omA6L6T5Ye655qE57yW56CB5L2N5Y+v6K+75a2X56ym77yMQmFzZTY05Yi25a6a5LqG5LiA5Liq57yW56CB6KGo77yM5Lul5L6/6L+b6KGM57uf5LiA6L2s5o2i44CC57yW56CB6KGo55qE5aSn5bCP5Li6Ml42PTY077yM6L+Z5Lmf5pivQmFzZTY05ZCN56ew55qE55Sx5p2l44CC");
 
         try {
-            File file = new File("C:\\Users\\Administrator\\Desktop\\201641413135-陈文浩-基于JavaEE的文化交流社区.docx");
+            File file = new File("C:\\Users\\Administrator\\Deskto\\201641413135-陈文浩-基于JavaEE的文化交流社区.docx");
             //            String str = StrUtil.str(Base64Encoder.encode(FileUtil.readBytes(file), false,
             // false), "UTF-8");
             user.setFileData(Base64.encode(file));
@@ -82,5 +91,61 @@ public class ApplicationTest {
         redisTemplate.opsForValue().set("123", "asfasfasfasf");
         System.out.println(redisTemplate.opsForValue().get("asd").equals("大师法士大夫不是的"));
         System.out.println(redisTemplate.opsForValue().get("123").equals("asfasfasfasf"));
+    }
+
+    @Test
+    public void test() {
+
+        ProxyFactory factory = new ProxyFactory(new House());
+        factory.addInterface(Construction.class);
+        factory.addAdvice(new BeforeConstructAdvice());
+        factory.setExposeProxy(true);
+
+        Construction construction = (Construction) factory.getProxy();
+        construction.construct();
+        assertTrue("Construction is illegal. "
+                + "Supervisor didn't give a permission to build "
+                + "the house", construction.isPermitted());
+
+    }
+
+    interface Construction {
+        public void construct();
+
+        public void givePermission();
+
+        public boolean isPermitted();
+    }
+
+    class House implements Construction {
+
+        private boolean permitted = false;
+
+        @Override
+        public boolean isPermitted() {
+            return this.permitted;
+        }
+
+        @Override
+        public void construct() {
+            System.out.println("I'm constructing a house");
+        }
+
+        @Override
+        public void givePermission() {
+            System.out.println("Permission is given to construct a simple house");
+            this.permitted = true;
+        }
+    }
+
+    class BeforeConstructAdvice implements MethodBeforeAdvice {
+
+        @Override
+        public void before(Method method, Object[] arguments, Object target) throws Throwable {
+            if (method.getName().equals("construct")) {
+                ((Construction) target).givePermission();
+            }
+        }
+
     }
 }
