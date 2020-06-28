@@ -18,10 +18,13 @@
         <module name="xiao7-boot-starter-cloud" />
         <module name="rocketMq-example" />
         <module name="xiao7-boot-starter-dependencies" />
-        <module name="DesignPatterns" />
         <module name="xiao7-boot-starter-web" />
+        <module name="DesignPattern" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DesignPatterns" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
