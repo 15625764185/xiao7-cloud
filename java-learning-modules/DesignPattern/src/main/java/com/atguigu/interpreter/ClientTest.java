@@ -8,6 +8,7 @@ import java.util.HashMap;
 public class ClientTest {
 
 	public static void main(String[] args) throws IOException {
+
 		// TODO Auto-generated method stub
 		String expStr = getExpStr(); // a+b
 		HashMap<String, Integer> var = getValue(expStr);// var {a=10, b=20}

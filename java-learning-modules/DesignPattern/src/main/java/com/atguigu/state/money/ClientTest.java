@@ -7,14 +7,15 @@ public class ClientTest {
 		// TODO Auto-generated method stub
 		//创建context 对象
 		Context context = new Context();
-        //将当前状态设置为 PublishState
-		context.setState(new PublishState());
-        System.out.println(context.getCurrentState());
-        
+		//将当前状态设置为 PublishState
+		//context.setState(new PublishState());
+		System.out.println(context.getCurrentState());
+		context.checkEvent(context);
+		context.makePriceEvent(context);
 //        //publish --> not pay
-        context.acceptOrderEvent(context);
+		context.acceptOrderEvent(context);
 //        //not pay --> paid
-        context.payOrderEvent(context);
+		context.payOrderEvent(context);
 //        // 失败, 检测失败时，会抛出异常
 //        try {
 //        	context.checkFailEvent(context);
@@ -23,7 +24,7 @@ public class ClientTest {
 //			// TODO: handle exception
 //			System.out.println(e.getMessage());
 //		}
-        
+
 	}
 
 }

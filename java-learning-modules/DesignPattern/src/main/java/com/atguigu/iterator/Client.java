@@ -9,13 +9,13 @@ public class Client {
 		// TODO Auto-generated method stub
 		//创建学院
 		List<College> collegeList = new ArrayList<College>();
-		
+
 		ComputerCollege computerCollege = new ComputerCollege();
 		InfoCollege infoCollege = new InfoCollege();
-		
+
 		collegeList.add(computerCollege);
-		//collegeList.add(infoCollege);
-		
+		collegeList.add(infoCollege);
+
 		OutPutImpl outPutImpl = new OutPutImpl(collegeList);
 		outPutImpl.printCollege();
 	}
